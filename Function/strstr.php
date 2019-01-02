@@ -13,3 +13,4 @@ var_dump($file_name);
 //文件名的后缀
 $ext_name = substr(strstr($file_name,'.'),'1');
 var_dump($ext_name);
+var_dump(in_array(['name'=>'caoxiang'],[['name'=>'caoxiangloveliulin'],['name'=>'liulin']]));
