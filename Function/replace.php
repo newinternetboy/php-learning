@@ -6,8 +6,5 @@
  * Time: 16:26
  */
 $str = "http://img2.soyoung.com/upload/20181029/5/20181029184218444.jpg";
-$dec = hexdec('0x11');
+$dec = hexdec('0x0F0F0F0F0F');
 echo $dec;
-$dec = $dec * 16;
-$hex = dechex($dec);
-var_dump($dec,$hex);
