@@ -47,3 +47,33 @@ foreach($input as $k => $v){
     }
 }
 print_r($arr_input_save);
+/**
+ * hanoi 汉罗塔问题
+ * 汉罗塔的解决充分利用了栈后进先出的特性来解决
+ * 分析
+ * 1 n个圆盘从A移动到C，可以将问题简化成将n-1个圆盘，从A移动到B，然后把n号盘从A移动到C
+ * 2 步骤一过后，那么问题就成了将n-2个盘从B借助A移动到C,移动后将n-1号圆盘移动到C
+ * 3 步骤二过后，那么问题就成了将n-3个盘从A借助B移动到C,移动后将n-2号圆盘移动到C
+ */
+
+class Hanoi{
+    //记录第几次移动
+    static $m = 0;
+
+    public function move($n,$b1,$b2){
+        echo "第".++self::$m."次移动，把{$n}号盘从{$b1}杆儿移动到{$b2}杆儿"."\n";
+    }
+
+    public function hanoi_move($n,$b1,$b2,$b3){
+        if($n == 1){
+            $this->move(1,$b1,$b3);
+        }else{
+            $this->hanoi_move($n-1,$b1,$b3,$b2);
+            $this->move($n,$b1,$b3);
+            $this->hanoi_move($n-1,$b2,$b1,$b3);
+        }
+    }
+}
+
+$Hanoi = new Hanoi();
+$Hanoi->hanoi_move(4,'A','B','C');
