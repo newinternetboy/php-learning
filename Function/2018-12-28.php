@@ -25,4 +25,9 @@ var_dump(password_verify('caoxiang',$password));
 //4 password_get_info 返回生成hash的相关信息
 var_dump(password_get_info($password));
 
+//base64_decode
+echo base64_encode('jiadedouniwan')."\n";
+echo base64_decode('amlhZGVkb3VuaXdhbg==');
+
+
 
