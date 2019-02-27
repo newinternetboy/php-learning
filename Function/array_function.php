@@ -182,3 +182,68 @@ $age = [
 $map_arr = array_map('show_name_age',$name,$age);
 print_r($map_arr);*/
 
+//  array_merge_recursive ( array $array1 [, array $... ] ) : array
+// 递归合并数组 字符键名会进行合并，数值键值相同会附加(不会覆盖)
+/*$arr1 = [
+    'color' => ['my' =>['fav'=>'red'],5]
+];
+$arr2 = [
+    'color' => ['my' =>['fav'=>'blue'],10]
+];
+$arr = array_merge_recursive($arr1,$arr2);
+print_r($arr);die;*/
+
+/*// array_merge ( array $array1 [, array $... ] ) : array
+// 合并数组  字符串键名相同，后面值覆盖前面，数值键名重新索引(不覆盖)
+$arr1 = [
+    'name' => 'liulin',
+    21
+];
+$arr2 = [
+    'name' => 'liuxiaohan',
+    22
+];
+
+print_r(array_merge($arr1,$arr2));*/
+/*Array
+(
+    [name] => liuxiaohan
+    [0] => 21
+    [1] => 22
+)*/
+
+/*//array_pad ( array $array , int $size , mixed $value ) : array
+//将数组填充到指定长度
+$arr = [1,2,3];
+//print_r(array_pad($arr,5,['a'=>'b']));
+print_r(array_pad($arr,-5,5));//左边填充*/
+
+/*//array_pop ( array &$array ) : mixed
+//array_pop() 弹出并返回 array 数组的最后一个单元，并将数组 array 的长度减一。
+$arr = [1,2,6];
+var_dump(array_pop($arr));
+var_dump($arr);*/
+
+/*// array_product ( array $array ) : number
+// array_product() 以整数或浮点数返回一个数组中所有值的乘积。
+// 隐式转换，非数值转换成数值; 空数组返回1
+$arr =[1,2,3,'1.1'];
+var_dump(array_product([]));*/
+
+/*// array_push ( array &$array , mixed $value1 [, mixed $... ] ) : int
+// 将一个或多个元素进行压栈
+$arr = [];
+array_push($arr,1,[1,2]);
+print_r($arr);*/
+
+/*//array_reduce ( array $array , callable $callback [, mixed $initial = NULL ] ) : mixed
+//用回调函数迭代地将数组简化为单一的值
+//initial 不初始化的时候为null，转为数值为0。在做乘法的时候，需要初始化为1
+$arr = [[1],[2],[3]];
+function mul($carry,$item){
+    $carry *= $item[0];
+    return $carry;
+}
+$res = array_reduce($arr,'mul',1);
+var_dump($res);*/
+
