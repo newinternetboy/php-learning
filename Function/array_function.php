@@ -247,3 +247,90 @@ function mul($carry,$item){
 $res = array_reduce($arr,'mul',1);
 var_dump($res);*/
 
+/*//第一个数组键存在，后序数组不存在，不操作
+//第一个数组键不存在，后序数组存在，在第一个数组新增
+//第一个数组键也在后序数组中存在，则用后序数组对应的键值替换第一个数组的键值
+//array_replace_recursive ( array $array1 [, array $... ] ) : array
+//行为：首页进行对应键值的替换，然后根据值得类型决定是否递归执行替换
+//只是一维替换
+$arr = ['a'=>['a','b']];
+$arr2 = ['a'=>['aa']];
+$result = array_replace_recursive($arr,$arr2);
+//array_replace替换行为同递归替换，但是不会进行值的递归替换
+$result_replace = array_replace($arr,$arr2);
+print_r($result);
+print_r($result_replace);*/
+
+/*// array_reverse ( array $array [, bool $preserve_keys = FALSE ] ) : array
+// 翻转数组,第二个参数表示是否保留数组键不变
+$arr = [
+    1 => [1],
+    2 => [2],
+    3 => [3]
+];
+$rev_arr = array_reverse($arr, true);
+print_r($rev_arr);*/
+
+/*// array_search ( mixed $needle , array $haystack [, bool $strict = false ] ) : mixed
+// 找值，返回值对应的key，如果找不到，那么返回false
+$arr = [1,2,3];
+$key = array_search(2,$arr);
+var_dump($key);*/
+
+/*// array_shift ( array &$array ) : mixed
+// 移除数组的第一个单元，并返回该值，数组为空或者非数组返回null
+$arr = [1,2,3];
+$value = array_shift($arr);
+var_dump($value);*/
+
+/*//array_unshift ( array &$array [, mixed $... ] ) : int
+//在数组第一个位置插入元素，支持多个参数，后面的参数先插入
+$arr = [3,4];
+$arr1 = [1,2];
+array_unshift($arr,$arr1,'string','string2');
+print_r($arr);*/
+
+/*// array_walk ( array &$array , callable $callback [, mixed $userdata = NULL ] ) : bool
+// 使用用户自定义的函数作用在数组的每一个元素上，自定义函数第一个参数加上&，对值的操作会作用到原数组
+$arr = [1,2,3,4];
+function powOfMine(&$value, $key){
+    $value = pow($value,$key);
+}
+array_walk($arr,'powOfMine');
+print_r($arr);*/
+
+
+/*// array_walk_recursive ( array &$array , callable $callback [, mixed $userdata = NULL ] ) : bool
+// 递归对数组成员进行调用用户自定义的函数
+$arr = [
+    'a' => [
+        'a' => [
+            'a'
+        ]
+    ]
+];
+
+function UpperCase(&$value, $key){
+    $value = strtoupper($value);
+}
+
+array_walk_recursive($arr,'UpperCase');
+print_r($arr);*/
+
+/*//arsort ( array &$array [, int $sort_flags = SORT_REGULAR ] ) : bool
+//对数组进行逆向排序并保持索引关系(降序)
+$arr = [
+1,2,3,4
+];
+arsort($arr,SORT_NATURAL);
+print_r($arr);*/
+
+
+/*// asort ( array &$array [, int $sort_flags = SORT_REGULAR ] ) : bool
+// 升序排列
+$arr = [
+    4,3,2,1
+];
+asort($arr);
+print_r($arr);*/
+
