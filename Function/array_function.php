@@ -334,3 +334,107 @@ $arr = [
 asort($arr);
 print_r($arr);*/
 
+/*//compact ( mixed $varname1 [, mixed $... ] ) : array
+//创建一个包含其变量与其值得数组，可以递归
+$name = 'caoxiang';
+$age = 20;
+$arr = [
+    'name','age'
+];
+$compact_arr = compact($arr);
+print_r($compact_arr);*/
+
+/*// extract ( array &$array [, int $flags = EXTR_OVERWRITE [, string $prefix = NULL ]] ) : int
+// 关联数组，键为变量名，值为变量值
+// flags:表示在非法数字和冲突键名，extract的行为
+//  EXTR_OVERWRITE（默认值） :如有冲突，重写;
+//  EXTR_SKIP:冲突，跳过；
+//  EXTR_PREFIX_SAME：冲突了，在变量名前加前缀
+//  EXTR_PREFIX_ALL:给所有变量加上前缀；
+//  EXTR_PREFIX_INVALID：在非法变量名前加上前缀
+//  EXTR_IF_EXISTS：覆盖已经定义好的变量，未定义的直接跳过
+//  EXTR_PREFIX_IF_EXISTS：已经定义好的变量加前缀导入值
+//  prefix
+$age = 22;
+$arr = [
+    'age' => 26,
+    'name' => 'caoxiang'
+];
+extract($arr, EXTR_PREFIX_IF_EXISTS,'cx');
+echo "$cx_age";*/
+
+//2019-04-04
+/*//  count ( mixed $array_or_countable [, int $mode = COUNT_NORMAL ] ) : int
+//  统计出数组中元素的个数或者对象中属性的个数(该对象实现了Countable接口)
+$arr  = [];
+$count = count($arr);
+echo $count;*/
+
+/*//  current ( array &$array ) : mixed,初始化数组默认指向第一个
+//  end() - 将数组的内部指针指向最后一个单元
+//  key() - 从关联数组中取得键名
+//    each() - 返回数组中当前的键／值对并将数组指针向前移动一步 7.2的php废弃了该方法
+//    prev() - 将数组的内部指针倒回一位
+//    reset() - 将数组的内部指针指向第一个单元
+//    next() - 将数组中的内部指针向前移动一位
+$arr = ['caoxiang','liulin','liuxiaohan'];
+$first = current($arr);
+$end = end($arr);
+$end_key = key($arr);
+echo $first."\n";
+echo $end."\n";
+echo $end_key."\n";
+$end_prev = prev($arr);
+$end_prev_key = key($arr);
+echo $end_prev_key."\n";*/
+
+
+/*// krsort ( array &$array [, int $sort_flags = SORT_REGULAR ] ) : bool
+// 对数组按照键值排序，降序
+$arr = [
+    'a' => 'a',
+    'd' => 'd',
+    'c' => 'c',
+    'b' => 'b'
+];
+//krsort($arr);
+// ksort 升序
+ksort($arr);
+print_r($arr);*/
+
+
+/*// natcasesort ( array &$array ) : bool
+// 不区分大小写的自然排序算法，保留键值关联
+$array1 = $array2 = $array3 = array('IMG0.png', 'img12.png', 'img10.png', 'img2.png', 'img1.png', 'IMG3.png');
+echo "Standard Sorting\n";
+sort($array1);
+print_r($array1);
+echo "Natural order sorting case-insensitive\n";
+natcasesort($array2);
+print_r($array2);
+echo "Natural Order sorting\n";
+natsort($array3);
+print_r($array3);*/
+
+/*// range ( mixed $start , mixed $end [, number $step = 1 ] ) : array
+// 生成一个指定范围的数组
+$arr = range(0,10,1);
+$arr2 = range(0,10,2);
+print_r($arr);
+print_r($arr2);*/
+
+/*//rsort 对数组的值按降序排序
+$arr = range(0,10);
+rsort($arr);
+print_r($arr);*/
+
+// sort 低到高排序
+
+/*// shuffle ( array &$array ) : bool 打乱一个数组
+$arr = range(0,5);
+shuffle($arr);
+print_r($arr);*/
+
+// uasort ( array &$array , callable $value_compare_func ) : bool
+//
+
