@@ -38,19 +38,22 @@ var_dump(x_range(1,10,1) instanceof Iterator);//bool(true)*/
 //var_dump($yield_test->current());*/
 
 /*********************迭代器start**************************/
-/*function yield_iterator(){
+function yield_iterator(){
     yield 1;
-    echo "this is code between 1 and 2\n";
+    echo time()."\n";
     yield 2;
+    echo time()."\n";
     yield 3;
+    echo time()."\n";
 }
 
 $yield_iterator = yield_iterator();
 foreach ($yield_iterator as $key => $value){
     //$key 代表的是当前yield的次序
     //$value 代表的是当前yield表达式的值
-//    echo $key ."---->".$value."\n";
-}*/
+    echo $key ."---->".$value."\n";
+    sleep(2);
+}
 /*********************迭代器end**************************/
 
 
